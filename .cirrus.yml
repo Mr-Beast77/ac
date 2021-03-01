@@ -5,15 +5,3 @@ task:
         cpu: 1
         memory: 768M
     t_script: source t
-
-check_task:
-  name: ccache check            #name of task, can call in depends_on
-  alias: acheck                 #alias of task name, can call in depends_on
-  container:
-    image: node:latest
-  node_modules_cache:                           #node_modules=Populate node_modules cache 
-    folder: sb/node_modules                     #sb/node_modules folder will be saved as cache, so no need to regenarate
-    fingerprint_script: cat sb/commands.txt    #change in this output will trigger regenerate cache
-    populate_script: npm install --prefix sb    #how to generate cache
-  test_script: npm start --prefix sb            #test=Run test inside ccache check
-  ok_script: dd if=/dev/zero of=sb/node_modules/testfile bs=10 count=1024000
