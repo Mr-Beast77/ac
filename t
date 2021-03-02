@@ -3,7 +3,6 @@
 #apt install -y -qq curl python
 whoami
 pwd
-useradd ci
 su ci
 whoami
 pwd

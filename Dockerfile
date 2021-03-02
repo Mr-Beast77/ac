@@ -20,4 +20,4 @@ COPY gitconfig /home/$username/.gitconfig
 RUN chown $userid:$groupid /home/$username/.gitconfig
 ENV HOME=/home/$username
 ENV USER=$username
-ENTRYPOINT chroot --userspec=$(cat /root/ci):$(cat /root/ci) / /bin/bash -i
+ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /bin/bash -i
