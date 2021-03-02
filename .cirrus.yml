@@ -3,6 +3,8 @@ env:
 
 task:
     name: source t
+    env:
+        resync: 1
     container:
         dockerfile: Dockerfile
         docker_arguments:
@@ -11,11 +13,11 @@ task:
             username: ci
         cpu: 1
         memory: 768M
-    shared_cache:
+    src_cache:
         folder: rom
         reupload_on_changes: true # since there is a fingerprint script
-        #fingerprint_script:
-        #    - ls
+        fingerprint_script:
+            - echo $resync
         populate_script: 
           - source t
     t_script: source t
