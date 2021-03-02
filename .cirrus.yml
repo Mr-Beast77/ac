@@ -3,6 +3,11 @@ task:
     container:
         #image: Dockerfile
         dockerfile: Dockerfile
+        docker_arguments:
+            foo: bar
+            userid: $(id -u)
+            groupid: $(id -g)
+            username: $(id -un)
         cpu: 1
         memory: 768M
     t_script: source t
