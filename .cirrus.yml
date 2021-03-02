@@ -1,7 +1,8 @@
 task:
     name: source t
     container:
-        image: Dockerfile
+        #image: Dockerfile
+        dockerfile: Dockerfile
         cpu: 1
         memory: 768M
     t_script: source t
