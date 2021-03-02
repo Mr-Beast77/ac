@@ -4,14 +4,14 @@ env:
 task:
     name: source t
     env:
-        resync: 3
+        resync: 4
     container:
         dockerfile: Dockerfile
         docker_arguments:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 0.7
+        cpu: 1
         memory: 768M
     rom_cache:
         folder: rom
