@@ -11,7 +11,7 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 1
+        cpu: 0.7
         memory: 768M
     rom_cache:
         folder: rom
@@ -21,4 +21,3 @@ task:
         populate_script: 
           - source src
     t_script: source t
-
