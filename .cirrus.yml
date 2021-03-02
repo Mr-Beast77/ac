@@ -13,9 +13,9 @@ task:
         memory: 768M
     shared_cache:
         folder: rom
-        reupload_on_changes: false # since there is a fingerprint script
-        fingerprint_script:
-            - ls
+        reupload_on_changes: true # since there is a fingerprint script
+        #fingerprint_script:
+        #    - ls
         populate_script: 
           - source t
     t_script: source t
