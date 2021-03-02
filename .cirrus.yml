@@ -10,6 +10,7 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
+            hostname: ci
         cpu: 2
         memory: 768M
 #    rom_cache:
