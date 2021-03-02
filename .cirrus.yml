@@ -16,8 +16,6 @@ task:
         reupload_on_changes: false # since there is a fingerprint script
         fingerprint_script:
             - ls
-            - pwd
         populate_script: 
-          - ls
           - source t
     t_script: source t
