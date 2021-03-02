@@ -8,4 +8,7 @@ su ci
 pwd
 whoami
 cat /etc/os*
+ls /home
+ls
+ls /
 #curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
