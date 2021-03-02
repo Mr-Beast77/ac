@@ -4,7 +4,6 @@ task:
         #image: Dockerfile
         dockerfile: Dockerfile
         docker_arguments:
-            foo: bar
             userid: $(id -u)
             groupid: $(id -g)
             username: $(id -un)
