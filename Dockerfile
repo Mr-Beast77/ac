@@ -21,8 +21,9 @@ RUN groupadd -g $groupid $username \
  && echo "export USER="$username >>/home/$username/.gitconfig
 COPY gitconfig /home/$username/.gitconfig
 RUN chown $userid:$groupid /home/$username/.gitconfig
-RUN mv /usr/bin/hostname{.bkp,}
+RUN mv /usr/bin/hostname.bkp /usr/bin/hostname
 ENV HOME=/home/$username
 ENV USER=$username
 USER ci
+HOSTNAME ci
 ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /bin/bash -i
