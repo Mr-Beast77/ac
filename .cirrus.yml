@@ -11,7 +11,7 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 1
+        cpu: 2
         memory: 768M
     rom_cache:
         folder: rom
