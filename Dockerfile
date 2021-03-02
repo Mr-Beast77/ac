@@ -9,7 +9,7 @@ RUN curl -o jdk8.tgz https://android.googlesource.com/platform/prebuilts/jdk/jdk
  && tar -zxf jdk8.tgz linux-x86 \
  && mv linux-x86 /usr/lib/jvm/java-8-openjdk-amd64 \
  && rm -rf jdk8.tgz
-RUN curl -o /usr/local/bin/repo https://storage.googleapis.com/git-repo-downloads/repo \
+RUN curl -o /usr/local/bin/repo https://storage.googleapis.com/git-repo-downloads/repo-1 \
  #&& echo "d06f33115aea44e583c8669375b35aad397176a411de3461897444d247b6c220  /usr/local/bin/repo" | sha256sum --strict -c - \
  && chmod a+x /usr/local/bin/repo
 RUN groupadd -g $groupid $username \
