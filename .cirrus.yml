@@ -4,9 +4,9 @@ task:
         #image: Dockerfile
         dockerfile: Dockerfile
         docker_arguments:
-            userid: $(id -u)
-            groupid: $(id -g)
-            username: $(id -un)
+            userid: 1000
+            groupid: 1000
+            username: ci
         cpu: 1
         memory: 768M
     t_script: source t
