@@ -19,5 +19,5 @@ task:
         fingerprint_script:
             - echo $resync
         populate_script: 
-          - source rom
+          - source src
     t_script: source t
