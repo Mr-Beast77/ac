@@ -13,11 +13,11 @@ task:
             username: ci
         cpu: 1
         memory: 768M
-    src_cache:
+    rom_cache:
         folder: rom
-        reupload_on_changes: true # since there is a fingerprint script
+        reupload_on_changes: false # since there is a fingerprint script
         fingerprint_script:
             - echo $resync
         populate_script: 
-          - source t
+          - source rom
     t_script: source t
