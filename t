@@ -4,5 +4,8 @@
 pwd
 df -h
 whoami
+su ci
+pwd
+whoami
 cat /etc/os*
-curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+#curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
