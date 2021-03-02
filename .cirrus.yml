@@ -12,3 +12,4 @@ task:
         cpu: 1
         memory: 768M
     t_script: source t
+    who_script: whoami
