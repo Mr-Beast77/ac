@@ -13,7 +13,9 @@ task:
         memory: 768M
     shared_cache:
         folder: rom
-        #reupload_on_changes: false # since there is a fingerprint script
+        reupload_on_changes: false # since there is a fingerprint script
+        fingerprint_script:
+            - ls rom
         populate_script: 
           - mkdir hi
           - echo i am fine >> hi/ok.txt
