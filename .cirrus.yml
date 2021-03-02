@@ -3,7 +3,6 @@ env:
 task:
     name: source t
     container:
-        #image: Dockerfile
         dockerfile: Dockerfile
         docker_arguments:
             userid: 1000
@@ -11,4 +10,13 @@ task:
             username: ci
         cpu: 1
         memory: 768M
+    shared_cache:
+        folder: hi
+        reupload_on_changes: false # since there is a fingerprint script
+        fingerprint_script:
+          - python --version
+          - whoami
+        populate_script: 
+          - mkdir hi
+          - echo i am fine > hi/ok.txt
     t_script: source t
