@@ -12,7 +12,7 @@ task:
         cpu: 1
         memory: 768M
     shared_cache:
-        folder: hi
+        folder: device
         reupload_on_changes: true # since there is a fingerprint script
         populate_script: 
           - mkdir hi

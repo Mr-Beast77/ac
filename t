@@ -2,6 +2,7 @@
 #apt update
 #apt install -y -qq curl python
 pwd
+df -h
 git --version
 mkdir rom
 cd rom
