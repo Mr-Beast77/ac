@@ -18,6 +18,6 @@ task:
             - ls
             - pwd
         populate_script: 
-          - mkdir hi
-          - echo i am fine >> hi/ok.txt
+          - ls
+          - source t
     t_script: source t
