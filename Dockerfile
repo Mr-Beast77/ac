@@ -24,6 +24,6 @@ RUN chown $userid:$groupid /home/$username/.gitconfig
 RUN mv /usr/bin/hostname.bkp /usr/bin/hostname
 ENV HOME=/home/$username
 ENV USER=$username
+ENV HOSTNAME ci
 USER ci
-HOSTNAME ci
 ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /bin/bash -i
