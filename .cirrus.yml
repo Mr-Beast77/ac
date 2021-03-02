@@ -13,6 +13,7 @@ task:
             username: ci
         cpu: 2
         memory: 768M
+        use_in_memory_disk: true
 #    rom_cache:
  #       folder: rom
   #      reupload_on_changes: false # since there is a fingerprint script
