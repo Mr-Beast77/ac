@@ -1,10 +1,8 @@
 #!/bin/bash
 #apt update
 #apt install -y -qq curl python
-whoami
 pwd
-echo $HOME
 ls
-ls /
-ls /home/ci
+cat hi/ok.txt
+echo good boy >> hi/ok.txt
 #curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
