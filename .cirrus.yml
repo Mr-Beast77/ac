@@ -1,17 +1,15 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
+    HOSTNAME: ci
 
 task:
     name: aosp
-    env:
-        resync: 5
     container:
         dockerfile: Dockerfile
         docker_arguments:
             userid: 1000
             groupid: 1000
             username: ci
-            hostname: ci
         cpu: 2
         memory: 768M
 #    rom_cache:
