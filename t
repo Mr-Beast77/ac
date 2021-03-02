@@ -1,14 +1,10 @@
 #!/bin/bash
 #apt update
 #apt install -y -qq curl python
-pwd
-df -h
 whoami
+pwd
+useradd ci
 su ci
-pwd
 whoami
-cat /etc/os*
-ls /home
-ls
-ls /
+pwd
 #curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
