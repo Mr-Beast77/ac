@@ -20,18 +20,23 @@ task:
         - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
           #- repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
           #- curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
+        - printenv
     rom_cache:
        folder: /tmp/ok
        reupload_on_changes: false # since there is a fingerprint script
        fingerprint_script:
          - echo $resync
+         - printenv
        populate_script: 
          - echo ok
+         - printenv
     lunch_script:
         - ls -lah
+        - printenv
         - pwd
           #- . build/envsetup.sh
           # - lunch aosp_mido-user
     build_script:
             # - make init
+        - printenv
             # cache, out, upload, concurrent
