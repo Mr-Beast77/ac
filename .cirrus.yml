@@ -14,23 +14,13 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 12
+        cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
         memory: 14G
     sync_script:
-        - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-        - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-        - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30
+        - ./sync
 
     rom_cache:
        folder: /tmp/rom
 
     build_script:
-        - . build/envsetup.sh
-        - lunch aosp_mido-user
-        - export CCACHE_DIR=/tmp/rom
-        - export CCACHE_EXEC=$(which ccache)
-        - export USE_CCACHE=1
-        - ccache -M 10G
-        - ccache -o compression=true
-        - make init -j 24
-            # cache, out, upload, concurrent
+        - ./build
