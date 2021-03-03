@@ -15,10 +15,12 @@ task:
             groupid: 1000
             username: ci
         cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
-        memory: 14G
+        memory: 14G #8cpu,14G ram may be optimum
     sync_script:
         - ./sync
 
+    monitor_background_script:
+        - ./background
     rom_cache:
        folder: /tmp/rom
 
