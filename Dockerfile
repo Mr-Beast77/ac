@@ -24,3 +24,4 @@ ENV USER=$username
 ENV HOSTNAME ci
 USER ci
 ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /entrypoint.sh -i
+
