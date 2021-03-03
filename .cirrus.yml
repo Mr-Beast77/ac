@@ -10,8 +10,8 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 2
-        memory: 768M
+        cpu: 4
+        memory: 16G
 #    rom_cache:
  #       folder: rom
   #      reupload_on_changes: false # since there is a fingerprint script
