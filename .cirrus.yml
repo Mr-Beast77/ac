@@ -24,4 +24,7 @@ task:
      #     - source src
      #src_script: source src
     envsetup_script: source envsetup
-    build_script: source build
+    build_script: 
+        - echo i am fine
+        - echo 2nd
+        - echo 3rd
