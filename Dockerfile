@@ -17,11 +17,9 @@ RUN groupadd -g $groupid $username \
  && echo $username >/root/username \
  && echo "export USER="$username >>/home/$username/.gitconfig
 COPY gitconfig /home/$username/.gitconfig
-COPY entrypoint.sh /
 RUN chown $userid:$groupid /home/$username/.gitconfig
 ENV HOME=/home/$username
 ENV USER=$username
-ENV HOSTNAME ci
 USER ci
-ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /entrypoint.sh -i
+ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /bin/bash -i
 
