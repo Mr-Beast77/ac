@@ -1,8 +1,8 @@
 #!/bin/bash
-ls /
+ls -lah /
 whoami
 df -h
 hostname
 printenv
-ls
+ls -lah
 echo from t
