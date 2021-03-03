@@ -23,4 +23,4 @@ task:
      #     - source src
      #src_script: source src
     envsetup_script: source envsetup
-    make_script: source make
+    build_script: source build
