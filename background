@@ -1,1 +1,7 @@
-top || echo not worked top 
+while :
+do
+  echo | top 
+  sleep 2m
+done
+
+
