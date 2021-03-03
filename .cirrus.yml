@@ -23,8 +23,10 @@ task:
     #    populate_script: 
      #     - source src
      #src_script: source src
-    envsetup_script: source envsetup
-    build_script: 
+    envsetup_script:
+        - echo $var
+    build_script:
         - echo i am fine
         - echo 2nd
         - echo 3rd
+        - echo $var
