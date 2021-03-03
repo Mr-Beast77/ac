@@ -24,17 +24,19 @@ task:
      #     - source src
      #src_script: source src
     sync_script:
-        - echo $var
-        - hostname
-        - hostname(){
-                echo cis
-     }
-        - hostname
+        - mkdir -p rom
+        - cd rom
+        - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
+        - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+        - repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
+        - curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
     lunch_script:
-        - echo $var
-        - echo $var
+        - ls 
+        - pwd 
+        - . build/envsetup.sh
+        - lunch aosp_mido-user
     build_script:
         - echo i am fine
-        - echo 2nd
-        - echo 3rd
-        - echo $var
+        - make init
+
+#repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 frameworks/base vendor/aosp platform_build platform_art platform_bionic platform_build_soong platform_device_aosp_sepolicy platform_frameworks_native platform_frameworks_opt_telephony device/xiaomi/mido kernel/xiaomi/mido vendor/xiaomi
