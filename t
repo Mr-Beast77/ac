@@ -1,8 +1,8 @@
 #!/bin/bash
-ls -lah /
 whoami
 df -h
 hostname
 printenv
-ls -lah
+which wget
+which curl
 echo from t
