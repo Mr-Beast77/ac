@@ -26,7 +26,9 @@ task:
     sync_script:
         - echo $var
         - hostname
-        - hostname(){echo cis;}
+        - hostname(){
+                echo cis
+     }
         - hostname
     lunch_script:
         - echo $var
