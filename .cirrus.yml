@@ -31,11 +31,13 @@ task:
         - repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
         - curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
     lunch_script:
+        - cd rom
         - ls 
         - pwd 
         - . build/envsetup.sh
         - lunch aosp_mido-user
     build_script:
+        - cd rom
         - echo i am fine
         - make init
 
