@@ -23,13 +23,10 @@ task:
     #    populate_script: 
      #     - source src
      #src_script: source src
-    repo_init_script:
+    sync_script:
         - echo $var
-    repo_sync_script:
         - echo $var
-    local_manifest_script:
         - echo $var
-    clone_clang_script:
         - echo $var
     lunch_script:
         - echo $var
