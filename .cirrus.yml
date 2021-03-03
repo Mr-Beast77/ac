@@ -20,14 +20,10 @@ task:
         - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
         - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
         - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30
-          #- curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
+
     rom_cache:
        folder: /tmp/rom
-       reupload_on_changes: true # since there is a fingerprint script
-       fingerprint_script:
-         - echo ok
-       populate_script: 
-         - echo ok
+
     build_script:
         - . build/envsetup.sh
         - lunch aosp_mido-user
