@@ -34,7 +34,6 @@ task:
          - echo ok
          - printenv
     lunch_script:
-        - ls -lah
         - echo $test
         - printenv
         - pwd
