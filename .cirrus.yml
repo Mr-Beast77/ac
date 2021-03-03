@@ -2,6 +2,8 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     HOSTNAME: ci
     var: "env ok"
+    CIRRUS_SHELL: direct
+    CIRRUS_LOG_TIMESTAMP: true
 
 task:
     name: aosp
@@ -21,6 +23,7 @@ task:
           #- repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
           #- curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
         - printenv
+        - test="test working persist"
     rom_cache:
        folder: /tmp/ok
        reupload_on_changes: false # since there is a fingerprint script
@@ -32,6 +35,7 @@ task:
          - printenv
     lunch_script:
         - ls -lah
+        - echo $test
         - printenv
         - pwd
           #- . build/envsetup.sh
