@@ -1,4 +1,7 @@
 #!/bin/bash
+hostname(){
+	echo ci
+}
 mkdir -p rom
 cd rom
 repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
