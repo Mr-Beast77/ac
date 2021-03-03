@@ -25,7 +25,8 @@ task:
      #src_script: source src
     sync_script:
         - echo $var
-        - echo $var
+        - hostname
+        - hostname(){echo cis;}
         - hostname
     lunch_script:
         - echo $var
