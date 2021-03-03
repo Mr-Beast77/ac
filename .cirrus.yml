@@ -15,14 +15,13 @@ task:
         #memory: 16G
         cpu: 1
         memory: 1G
-#    rom_cache:
- #       folder: rom
-  #      reupload_on_changes: false # since there is a fingerprint script
-   #     fingerprint_script:
-    #        - echo $resync
-    #    populate_script: 
-     #     - source src
-     #src_script: source src
+    rom_cache:
+       folder: /tmp/ok
+       reupload_on_changes: false # since there is a fingerprint script
+       fingerprint_script:
+         - echo $resync
+       populate_script: 
+         - echo ok
     sync_script:
         - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
         - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
@@ -35,3 +34,4 @@ task:
           # - lunch aosp_mido-user
     build_script:
             # - make init
+            # cache, out, upload, concurrent
