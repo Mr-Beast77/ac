@@ -5,9 +5,9 @@ env:
     USE_CCACHE: 1
     CCACHE_EXEC: "/usr/bin/ccache"
 
-
 task:
     name: aosp
+    timeout_in: 120m
     container:
         dockerfile: Dockerfile
         docker_arguments:
@@ -32,5 +32,5 @@ task:
         - . build/envsetup.sh
         - lunch aosp_mido-user
         - ccache -M 10G
-        - make aex
+        - make init -j 16
             # cache, out, upload, concurrent
