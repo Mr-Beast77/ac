@@ -14,7 +14,7 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 8
+        cpu: 12
         memory: 14G
     sync_script:
         - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
@@ -27,6 +27,10 @@ task:
     build_script:
         - . build/envsetup.sh
         - lunch aosp_mido-user
+        - export CCACHE_DIR=/tmp/rom
+        - export CCACHE_EXEC=$(which ccache)
+        - export USE_CCACHE=1
         - ccache -M 10G
-        - make init -j 16
+        - ccache -o compression=true
+        - make init -j 24
             # cache, out, upload, concurrent
