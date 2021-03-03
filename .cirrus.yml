@@ -1,7 +1,10 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     HOSTNAME: ci
-    var: "env ok"
+    CCACHE_DIR: "/tmp/rom"
+    USE_CCACHE: 1
+    CCACHE_EXEC: "/usr/bin/ccache"
+
 
 task:
     name: aosp
@@ -11,31 +14,23 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        #cpu: 4
-        #memory: 16G
-        cpu: 1
-        memory: 1G
+        cpu: 15
+        memory: 23G
     sync_script:
         - repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
         - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-          #- repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
-          #- curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
-        - printenv
+        - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30
+        - curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
     rom_cache:
-       folder: /tmp/ok
-       reupload_on_changes: false # since there is a fingerprint script
+       folder: /tmp/rom
+       reupload_on_changes: true # since there is a fingerprint script
        fingerprint_script:
-         - echo $resync
-         - printenv
+         - echo ok
        populate_script: 
          - echo ok
-         - printenv
     lunch_script:
-        - printenv
-        - pwd
-          #- . build/envsetup.sh
-          # - lunch aosp_mido-user
+         - . build/envsetup.sh
+         - lunch aosp_mido-user
     build_script:
-            # - make init
-        - printenv
+        - make aex
             # cache, out, upload, concurrent
