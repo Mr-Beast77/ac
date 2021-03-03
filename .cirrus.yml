@@ -3,7 +3,7 @@ env:
     HOSTNAME: ci
     var: "env ok"
     CIRRUS_SHELL: direct
-    CIRRUS_LOG_TIMESTAMP: true
+    CIRRUS_LOG_TIMESTAMP: false
 
 task:
     name: aosp
