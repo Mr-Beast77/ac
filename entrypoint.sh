@@ -1,2 +1,2 @@
 #/bin/bash
-echo entry ok
+echo some.host.name > /etc/hostname
