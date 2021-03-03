@@ -29,11 +29,9 @@ task:
           #- repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 device/xiaomi/mido
           #- curl -Os https://roms.apon77.workers.dev/clang/prebuilts.tar.gz && tar xf prebuilts.tar.gz && rm prebuilts.tar.gz
     lunch_script:
-        - ls
+        - ls -lah
         - pwd
           #- . build/envsetup.sh
           # - lunch aosp_mido-user
     build_script:
             # - make init
-
-#repo sync -q -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 frameworks/base vendor/aosp platform_build platform_art platform_bionic platform_build_soong platform_device_aosp_sepolicy platform_frameworks_native platform_frameworks_opt_telephony device/xiaomi/mido kernel/xiaomi/mido vendor/xiaomi
