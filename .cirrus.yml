@@ -21,5 +21,6 @@ task:
     #        - echo $resync
     #    populate_script: 
      #     - source src
-    src_script: source src
-    t_script: source t
+     #src_script: source src
+    envsetup_script: source envsetup
+    make_script: source make
