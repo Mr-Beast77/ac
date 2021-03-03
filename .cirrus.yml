@@ -28,9 +28,9 @@ task:
          - echo ok
        populate_script: 
          - echo ok
-    lunch_script:
-         - . build/envsetup.sh
-         - lunch aosp_mido-user
     build_script:
+        - . build/envsetup.sh
+        - lunch aosp_mido-user
+        - ccache -M 10G
         - make aex
             # cache, out, upload, concurrent
