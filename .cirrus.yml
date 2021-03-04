@@ -7,7 +7,6 @@ env:
 
 task:
     name: aosp
-    allow_failures: true
     timeout_in: 120m
     container:
         dockerfile: Dockerfile
@@ -15,8 +14,8 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 16 #12cpu,14G ram got 1h schedule in concurrent build!
-        memory: 16G #8cpu,14G ram may be optimum
+        cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
+        memory: 12G #8cpu,14G ram may be optimum
 
     monitor_background_script:
         - ./background
@@ -24,9 +23,34 @@ task:
         - ./sync
     rom_cache:
        folder: /tmp/rom
-    build_script:
-        - ./build
+         #build_script:
+         #- ./build
+    part1_script:
+      - source common
+      - mmm frameworks
 
 
 
+task:
+    name: aosp
+    timeout_in: 120m
+    container:
+        dockerfile: Dockerfile
+        docker_arguments:
+            userid: 1000
+            groupid: 1000
+            username: ci
+        cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
+        memory: 12G #8cpu,14G ram may be optimum
 
+    monitor_background_script:
+        - ./background
+    sync_script:
+        - ./sync
+    rom_cache:
+       folder: /tmp/rom
+         #build_script:
+         #- ./build
+    part2_script:
+      - source common
+      - mmm external/dtc external/llvm external/toybox external/libcxx external/expat external/giflib
