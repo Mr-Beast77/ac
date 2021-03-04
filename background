@@ -1,5 +1,7 @@
 ok(){
 top -b -n 1
+export CCACHE_DIR=/tmp/rom
+ccache -s
 sleep 2m
 }
 
