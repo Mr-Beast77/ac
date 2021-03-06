@@ -37,3 +37,6 @@ task:
     4aex_script:
       - source common
       - make app_process
+    5aex_script:
+      - source common
+      - make aex
