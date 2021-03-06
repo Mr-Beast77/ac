@@ -1,4 +1,6 @@
 ok(){
+echo ' 
+ '
 top -b -n 1
 export CCACHE_DIR=/tmp/rom
 ccache -M 20G
