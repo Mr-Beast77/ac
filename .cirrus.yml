@@ -27,4 +27,13 @@ task:
          #- ./build
     aex_script:
       - source common
-      - make bootimage -j 24
+      - make api-stubs-docs 
+    aex_script:
+      - source common
+      - make system-api-stubs-docs 
+    aex_script:
+      - source common
+      - make test-api-stubs-docs
+    aex_script:
+      - source common
+      - make app_process
