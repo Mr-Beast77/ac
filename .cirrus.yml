@@ -27,4 +27,4 @@ task:
          #- ./build
     aex_script:
       - source common
-      - make aex -j 24
+      - make bootimage -j 24
