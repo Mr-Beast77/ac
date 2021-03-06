@@ -15,7 +15,7 @@ task:
             groupid: 1000
             username: ci
         cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
-        memory: 12G #2cpu,14G ram may be optimum
+        memory: 16G #2cpu,14G ram may be optimum
 
     monitor_background_script:
         - ./background
