@@ -25,9 +25,6 @@ task:
        folder: /tmp/rom
          #build_script:
          #- ./build
-    selinux_script:
+    aex_script:
       - source common
-      - mmm external/selinux
-    sepolicy_script:
-      - source common
-      - make sepolicy
+      - make aex -j 24

@@ -6,6 +6,8 @@ ccache -s
 sleep 2m
 }
 
+env
+
 while :
 do
   ok
