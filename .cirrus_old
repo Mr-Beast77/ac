@@ -27,4 +27,16 @@ task:
          #- ./build
     1aex_script:
       - source common
-      - g++ -Wall -g -o test frameworks/base/media/jni/audioeffect/android_media_AudioEffect.cpp
+      - make api-stubs-docs 
+    2aex_script:
+      - source common
+      - make system-api-stubs-docs 
+    3aex_script:
+      - source common
+      - make test-api-stubs-docs
+    4aex_script:
+      - source common
+      - make app_process
+    5aex_script:
+      - source common
+      - make aex
