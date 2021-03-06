@@ -25,15 +25,15 @@ task:
        folder: /tmp/rom
          #build_script:
          #- ./build
-    aex_script:
+    1aex_script:
       - source common
       - make api-stubs-docs 
-    aex_script:
+    2aex_script:
       - source common
       - make system-api-stubs-docs 
-    aex_script:
+    3aex_script:
       - source common
       - make test-api-stubs-docs
-    aex_script:
+    4aex_script:
       - source common
       - make app_process
