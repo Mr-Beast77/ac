@@ -4,7 +4,7 @@ env:
     CCACHE_DIR: "/tmp/rom"
     USE_CCACHE: 1
     CCACHE_EXEC: "/usr/bin/ccache"
-    CIRRUS_WORKING_DIR: "/tmp/aex"
+    CIRRUS_WORKING_DIR: "/tmp/apon"
 
 task:
     name: aosp
