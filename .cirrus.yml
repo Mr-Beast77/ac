@@ -28,7 +28,8 @@ task:
          #- ./build
     1aex_script:
       - source common
-      - make api-stubs-docs 
+        #- make api-stubs-docs 
+      - make aex -j24
     2aex_script:
       - source common
       - make system-api-stubs-docs 
