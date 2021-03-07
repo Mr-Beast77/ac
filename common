@@ -5,7 +5,5 @@ export CCACHE_DIR=/tmp/rom
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 20G
-allmod
 sed 49q build/make/core/Makefile | tail -n 1
 sed 492q build/make/core/base_rules.mk | tail -n 1
-

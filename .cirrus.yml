@@ -1,10 +1,11 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    HOSTNAME: ci
+    HOSTNAME: "ci"
     CCACHE_DIR: "/tmp/rom"
     USE_CCACHE: 1
     CCACHE_EXEC: "/usr/bin/ccache"
     CIRRUS_WORKING_DIR: "/tmp/apon"
+    CI_NODE_TOTAL: 1
 
 task:
     name: aosp
