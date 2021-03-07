@@ -4,6 +4,7 @@ env:
     CCACHE_DIR: "/tmp/rom"
     USE_CCACHE: 1
     CCACHE_EXEC: "/usr/bin/ccache"
+    CIRRUS_WORKING_DIR: "/tmp/apon"
 
 task:
     name: aosp
@@ -27,7 +28,8 @@ task:
          #- ./build
     1aex_script:
       - source common
-      - make api-stubs-docs 
+        #- make api-stubs-docs 
+      - make aex -j24
     2aex_script:
       - source common
       - make system-api-stubs-docs 
@@ -39,4 +41,19 @@ task:
       - make app_process
     5aex_script:
       - source common
-      - make aex
+      - make init
+    6aex_script:
+      - source common
+      - make app_process
+    7aex_script:
+      - source common
+      - make framework
+    8aex_script:
+      - source common
+      - make libbinder
+    9aex_script:
+      - source common
+      - make services
+    10aex_script:
+      - source common
+      - make framework-res
