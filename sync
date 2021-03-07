@@ -2,11 +2,10 @@ mkdir -p rom
 cd rom
 repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
-
-cd frameworks/av
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 300 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
+#cd frameworks/av
 #git fetch https://github.com/Apon77Lab/platform_frameworks_av
 #git cherry-pick 966755004d8fedeadf0d87665c8e36e12ac773f7
-git fetch --unshallow aex
-git revert 87b380d9c1 --no-edit
-cd -
+#git fetch --unshallow aex
+#git revert 87b380d9c1 --no-edit
+#cd -
