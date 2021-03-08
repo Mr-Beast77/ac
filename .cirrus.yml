@@ -30,7 +30,7 @@ task:
     1aex_script:
       - source common
         #- make api-stubs-docs 
-      - make aex -j24
+      - make bootimage -j24
     2aex_script:
       - source common
       - make system-api-stubs-docs 
