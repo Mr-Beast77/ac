@@ -12,3 +12,4 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 cd kernel/xiaomi/mido
 git fetch --unshallow zeelog
 git revert c3cca18f50ca339934a0fc7b029f07a787858ca8 --no-edit
+cd -
