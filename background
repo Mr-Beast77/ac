@@ -3,7 +3,7 @@ echo
 echo 
 top -b -n 1
 export CCACHE_DIR=/tmp/rom
-ccache -M 20G
+ccache -M 2G
 ccache -s
 sleep 2m
 }
