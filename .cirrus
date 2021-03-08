@@ -16,15 +16,13 @@ task:
             userid: 1000
             groupid: 1000
             username: ci
-        cpu: 1 #12cpu,14G ram got 1h schedule in concurrent build!
-        memory: 1G #2cpu,14G ram may be optimum
+        cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
+        memory: 16G #2cpu,14G ram may be optimum
 
     monitor_background_script:
         - ./background
     sync_script:
-        - hostname
-        - whoami
-        - sudo whoami
+        - ./sync
     rom_cache:
        folder: /tmp/rom
          #build_script:
