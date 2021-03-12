@@ -17,8 +17,9 @@ task:
       cpu: 1 #12cpu,14G ram got 1h schedule in concurrent build!
       memory: 1G #2cpu,14G ram may be optimum
     all_script:
-      - echo hi
-      - ./test
+      - mkdir -p ~/.config/rclone
+      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+      - rclone ls cache:
       #  - timeout 100m ./all
 
     cache_script:
