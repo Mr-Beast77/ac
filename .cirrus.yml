@@ -12,7 +12,7 @@ task:
     container:
       image: apon77/aosp:latest
       cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
-      memory: 24G #2cpu,14G ram may be optimum
+      memory: 16G #2cpu,14G ram may be optimum
     bg_cache_background_script:
       - time ./bg_cache
     all_script:

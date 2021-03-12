@@ -3,7 +3,7 @@ mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
 com () 
 { 
-    tar --use-compress-program="pigz -k -$2 " -cf /tmp/$1.tar.gz $1
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
 }
 
 up4 ()
