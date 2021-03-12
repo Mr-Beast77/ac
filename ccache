@@ -21,9 +21,9 @@ time rclone copy /tmp/ccache.tar.gz cache:
 du -sh /tmp/ccache.tar.gz
 du -sh /dev/shm/ccache
 
-export CCACHE_DIR=/tmp/ccache
+export CCACHE_DIR=/dev/shm/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-ccache -M 12G
+ccache -M 11G
 ccache -o compression=true
 ccache -s
