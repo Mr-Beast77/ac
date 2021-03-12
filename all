@@ -16,4 +16,4 @@ export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 11G
 ccache -o compression=true
-make aex -j50
+make aex -j12
