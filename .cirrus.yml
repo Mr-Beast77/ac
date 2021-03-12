@@ -1,8 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     HOSTNAME: "ci"
-    CCACHE_DIR: "/tmp/ccache"
-    USE_CCACHE: 1
     CIRRUS_WORKING_DIR: "/tmp/ci"
     CI_NODE_TOTAL: 1
 
@@ -12,21 +10,10 @@ task:
     env:
       rclone_config: ENCRYPTED[eed8f6b3ca25c588cd1973688775ea44c38162dc6f466e5511a5fe2f6b9efd96a5d6b6f8163b962f7bb3c2fbdc0fdbe4]
     container:
-      #image: apon77/aosp:latest
       image: apon77/aosp:latest
-      cpu: 1 #12cpu,14G ram got 1h schedule in concurrent build!
-      memory: 1G #2cpu,14G ram may be optimum
+      cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
+      memory: 24G #2cpu,14G ram may be optimum
     all_script:
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - rclone ls cache:
-      #  - timeout 100m ./all
-
+      - timeout 100m ./all
     cache_script:
-      #- ./ccache
-      - echo fine
-      - df -h
-      - nproc
-      - free -h
-      - whoami
-      - echo $0
+      - ./ccache

@@ -1,6 +1,0 @@
-#!/bin/bash
-if [[ $rclone_config==*cache* ]];
-then
-echo secret found
-fi
-
