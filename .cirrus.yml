@@ -1,67 +1,30 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     HOSTNAME: "ci"
-    CCACHE_DIR: "/tmp/rom"
+    CCACHE_DIR: "/tmp/ccache"
     USE_CCACHE: 1
-    CCACHE_EXEC: "/usr/bin/ccache"
     CIRRUS_WORKING_DIR: "/tmp/apon"
     CI_NODE_TOTAL: 1
 
 task:
     name: aosp
     timeout_in: 120m
+    env:
+      rclone_config: ENCRYPTED[eed8f6b3ca25c588cd1973688775ea44c38162dc6f466e5511a5fe2f6b9efd96a5d6b6f8163b962f7bb3c2fbdc0fdbe4]
     container:
-        dockerfile: Dockerfile
-        docker_arguments:
-            userid: 1000
-            groupid: 1000
-            username: ci
-        cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
-        memory: 16G #2cpu,14G ram may be optimum
+      #image: apon77/aosp:latest
+      image: apon77/aosp:latest
+      cpu: 1 #12cpu,14G ram got 1h schedule in concurrent build!
+      memory: 1G #2cpu,14G ram may be optimum
+    all_script:
+      - echo hi
+      #  - timeout 100m ./all
 
-    monitor_background_script:
-        - ./background
-    sync_script:
-        - ./sync
-    rom_cache:
-       folder: /tmp/rom
-         #build_script:
-         #- ./build
-    1aex_script:
-      - source common
-        #- make api-stubs-docs 
-      - make bootimage -j24
-    2aex_script:
-      - source common
-      - make system-api-stubs-docs -j 24
-    3aex_script:
-      - source common
-      - make test-api-stubs-docs -j 24
-
-    4aex_script:
-      - source common
-      - make app_process -j 24
-
-    5aex_script:
-      - source common
-      - make init -j 24
-
-    6aex_script:
-      - source common
-      - make app_process -j 24
-
-    7aex_script:
-      - source common
-      - make framework -j 24
-
-    8aex_script:
-      - source common
-      - make libbinder -j 24
-
-    9aex_script:
-      - source common
-      - make services -j 24
-
-    10aex_script:
-      - source common
-        #- make aex -j 24
+    cache_script:
+      #- ./ccache
+      - echo fine
+      - df -h
+      - nproc
+      - free -h
+      - whoami
+      - echo $0

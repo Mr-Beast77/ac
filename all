@@ -1,0 +1,35 @@
+#!/bin/bash
+
+url=https://roms.apon77.workers.dev/ccache/ccache.tar.gz
+
+df -h
+free -h
+nproc
+
+tmate -S /tmp/tmate.sock new-session -d
+tmate -S /tmp/tmate.sock wait tmate-ready
+tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+
+curl -L $url -o /tmp/ccache.tar.gz &
+
+mkdir -p /tmp/rom
+cd /tmp/rom
+repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 prebuilts/clang/host/linux-x86 device/xiaomi/mido kernel/xiaomi/mido vendor/xiaomi frameworks/base #frameworks/av frameworks/native prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 prebuilts/vndk/v27 prebuilts/vndk/v28 prebuilts/vndk/v29
+
+tar xf /tmp/ccache.tar.gz -C /dev/shm &
+
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
+
+rm -rf .repo /tmp/ccache.tar.gz &
+
+. build/envsetup.sh
+lunch aosp_mido-user
+export CCACHE_DIR=/tmp/ccache
+export CCACHE_EXEC=$(which ccache)
+export USE_CCACHE=1
+ccache -M 12G
+ccache -o compression=true
+make aex -j50
