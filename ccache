@@ -12,16 +12,16 @@ up4 ()
     echo
 }
 
-cd /dev/shm
+cd /tmp
 time com ccache 1
 #time up4 ccache.tar.gz
 
 time rclone copy /tmp/ccache.tar.gz cache:
 
 du -sh /tmp/ccache.tar.gz
-du -sh /dev/shm/ccache
+du -sh /tmp/ccache
 
-export CCACHE_DIR=/dev/shm/ccache
+export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 11G

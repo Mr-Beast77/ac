@@ -5,5 +5,5 @@ tmate -S /tmp/tmate.sock new-session -d
 tmate -S /tmp/tmate.sock wait tmate-ready
 tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
 time curl -L $url -o /tmp/ccache.tar.gz
-time tar xf /tmp/ccache.tar.gz -C /dev/shm
+time tar xf /tmp/ccache.tar.gz -C /tmp
 rm -rf /tmp/ccache.tar.gz
