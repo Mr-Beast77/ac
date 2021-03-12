@@ -1,0 +1,11 @@
+#!/bin/bash
+
+url=https://roms.apon77.workers.dev/ccache/ccache.tar.gz
+tmate -S /tmp/tmate.sock new-session -d
+tmate -S /tmp/tmate.sock wait tmate-ready
+tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+time curl -L $url -o /tmp/ccache.tar.gz
+time tar xf /tmp/ccache.tar.gz -C /dev/shm
+ls /dev/shm
+ls /tmp
+rm -rf /tmp/ccache.tar.gz
