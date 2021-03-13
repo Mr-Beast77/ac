@@ -13,4 +13,4 @@ task:
     bg_cache_background_script:
       - echo bg
     all_script:
-      - echo $rclone_config | grep cache
+      - echo fine
