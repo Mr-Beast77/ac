@@ -10,8 +10,8 @@ task:
     timeout_in: 120m
     container:
       image: apon77/aosp:latest
-      cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
-      memory: 18G #2cpu,14G ram may be optimum
+      cpu: 4 #12cpu,14G ram got 1h schedule in concurrent build!
+      memory: 16G #2cpu,14G ram may be optimum
     bg_cache_background_script:
       - echo bg
     all_script:
