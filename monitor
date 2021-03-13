@@ -5,7 +5,8 @@ sleep 2m
 
 while :
 do
-top -b -i -n 1
 ccache -s
+echo ''
+top -b -i -n 1
 sleep 1m
 done
