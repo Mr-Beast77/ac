@@ -1,0 +1,18 @@
+#!/bin/bash
+
+rm -rf /tmp/aex.tar.gz &
+cd /tmp/rom
+
+. build/envsetup.sh
+lunch aosp_mido-user
+export CCACHE_DIR=/tmp/ccache
+export CCACHE_EXEC=$(which ccache)
+export USE_CCACHE=1
+ccache -M 12G
+ccache -o compression=true
+ccache -z
+make aex -j50
+
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy /tmp/rom/out/product/mido/*.zip apon:src -P
