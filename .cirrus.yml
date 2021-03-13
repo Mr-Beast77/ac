@@ -11,7 +11,10 @@ task:
       cpu: 4 #12cpu,14G ram got 1h schedule in concurrent build!
       memory: 16G #2cpu,14G ram may be optimum
     download_ccache_background_script:
-      #- ./deal_ccache
       - echo first time no ccache
-    all_script:
-      - echo fine
+    sync_script:
+      - ./sync
+    build_script:
+      - ./build
+    upload_ccache_script:
+      - ./upload_ccache
