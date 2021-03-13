@@ -10,5 +10,5 @@ export USE_CCACHE=1
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-mmm packages/apps/Bluetooth
+mmma packages/apps/Bluetooth
 ccache -s
