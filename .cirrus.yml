@@ -8,7 +8,6 @@ env:
 task:
     name: aosp
     timeout_in: 120m
-    env:
     container:
       image: apon77/aosp:latest
       cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
