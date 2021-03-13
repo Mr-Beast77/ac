@@ -1,17 +1,13 @@
 #!/bin/bash
 
-cd /tmp/rom
+cd /tmp
+com () 
+{ 
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
 
-. build/envsetup.sh
-lunch aosp_mido-user
-export CCACHE_DIR=/tmp/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-ccache -o compression=true
-ccache -z
-make aex -j50
+time com ccache 1
 
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
-time rclone copy /tmp/rom/out/product/mido/*.zip apon:src -P
+time rclone copy ccache.tar.gz cache:ci2 -P
