@@ -6,5 +6,6 @@ sleep 2m
 while :
 do
 ccache -s
+top -in 1
 sleep 1m
 done

@@ -9,7 +9,7 @@ task:
     container:
       image: apon77/aosp:latest
       cpu: 4 #12cpu,14G ram got 1h schedule in concurrent build!
-      memory: 16G #2cpu,14G ram may be optimum
+      memory: 18G #2cpu,14G ram may be optimum
     download_ccache_background_script:
       - ./download_ccache
     sync_script:
