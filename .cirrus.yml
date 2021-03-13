@@ -10,8 +10,8 @@ task:
       image: apon77/aosp:latest
       cpu: 4 #12cpu,14G ram got 1h schedule in concurrent build!
       memory: 16G #2cpu,14G ram may be optimum
-    deal_ccache_background_script:
-      - env
-        #- ./deal_ccache
+    download_ccache_background_script:
+      #- ./deal_ccache
+      - echo first time no ccache
     all_script:
       - echo fine

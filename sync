@@ -6,16 +6,3 @@ repo init -q --no-repo-verify --depth=1 -u git://github.com/AospExtended/manifes
 git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
-
-rm -rf .repo &
-
-. build/envsetup.sh
-lunch aosp_mido-user
-export CCACHE_DIR=/tmp/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 12G
-ccache -o compression=true
-#make aex -j12
-sleep 2h
-echo slept
