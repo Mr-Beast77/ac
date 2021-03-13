@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=https://roms.apon77.workers.dev/ccache/ccache.tar.gz
+url=https://roms.apon77.workers.dev/ccache/ci2/ccache.tar.gz
 
 cd /tmp
 time aria2c $url -x16 -s50

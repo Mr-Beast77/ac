@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export CCACHE_DIR=/tmp/ccache
+
+while:
+do
+ccache -s
+sleep 1m
+done
