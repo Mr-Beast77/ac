@@ -1,9 +1,0 @@
-cd rom
-. build/envsetup.sh
-lunch aosp_mido-user
-export CCACHE_DIR=/tmp/rom
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-make aex -j 24
-curl --upload-file out/target/product/mido/*.zip https://free.keep.sh || echo failed to upload
