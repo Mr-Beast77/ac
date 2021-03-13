@@ -10,5 +10,8 @@ export USE_CCACHE=1
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-timeout 100m make aex -j50
+make aex -j50 & 
+sleep 100m
+kill $(pidof soong_ui)
+kill $(pidof make)
 ccache -s
