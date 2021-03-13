@@ -4,6 +4,7 @@ url=https://roms.apon77.workers.dev/ccache/ccache.tar.gz
 tmate -S /tmp/tmate.sock new-session -d
 tmate -S /tmp/tmate.sock wait tmate-ready
 tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
-time curl -L $url -o /tmp/ccache.tar.gz
-time tar xf /tmp/ccache.tar.gz -C /tmp
+cd /tmp
+time aria2c $url -x16 -s50
+time tar xf ccache.tar.gz
 rm -rf /tmp/ccache.tar.gz
