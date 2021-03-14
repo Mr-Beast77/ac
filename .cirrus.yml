@@ -12,8 +12,6 @@ task:
       memory: 2G #2cpu,14G ram may be optimum
     download_ccache_background_script:
       - ./download_ccache
-    swapfile_background_script:
-      - ./swapfile
     sync_script:
       - ./sync
     monitor_background_script:
