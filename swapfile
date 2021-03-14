@@ -1,7 +1,7 @@
 #!/bin/bash
 
 swap_file=/mnt/swapfile
-swap_file_size=20G
+swap_file_size=2G
 
 sudo swapon --show
 sudo fallocate -l $swap_file_size $swap_file
