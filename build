@@ -9,7 +9,7 @@ deldog () {
 }
 
 cd /tmp/rom
-rm -rf .repo
+rm -rf .repo &
 . build/envsetup.sh
 lunch aosp_mido-user
 export CCACHE_DIR=/tmp/ccache
