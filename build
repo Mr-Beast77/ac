@@ -18,11 +18,11 @@ export USE_CCACHE=1
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-make api-stubs-docs || echo sorry
-make hiddenapi-lists-docs || echo sorry
-make system-api-stubs-docs || echo sorry
-make test-api-stubs-docs || echo sorry
-make aex -j50 || deldog out/error.log
+#make api-stubs-docs || echo sorry
+#make hiddenapi-lists-docs || echo sorry
+#make system-api-stubs-docs || echo sorry
+#make test-api-stubs-docs || echo sorry
+make aex || deldog out/error.log
 #sleep 100m
 #kill $(pidof soong_ui)
 #kill $(pidof make)
