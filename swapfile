@@ -1,0 +1,11 @@
+#!/bin/bash
+
+swap_file=/mnt/swapfile
+swap_file_size=20G
+
+sudo swapon --show
+sudo fallocate -l $swap_file_size $swap_file
+sudo chmod 600 $swap_file
+sudo mkswap $swap_file
+sudo swapon $swap_file
+sudo swapon --show

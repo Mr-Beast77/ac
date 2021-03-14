@@ -9,6 +9,7 @@ deldog () {
 }
 
 cd /tmp/rom
+rm -rf .repo
 . build/envsetup.sh
 lunch aosp_mido-user
 export CCACHE_DIR=/tmp/ccache
@@ -17,7 +18,6 @@ export USE_CCACHE=1
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-#make aex -j50 || cat out/error* > error.txt && deldog error.txt
 make aex -j50 || deldog out/error.log
 #sleep 100m
 #kill $(pidof soong_ui)
