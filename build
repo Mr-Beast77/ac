@@ -22,7 +22,7 @@ make api-stubs-docs || echo sorry
 make hiddenapi-lists-docs || echo sorry
 make system-api-stubs-docs || echo sorry
 make test-api-stubs-docs || echo sorry
-make aex || deldog out/error.log
+make aex -j8|| deldog out/error.log
 #sleep 100m
 #kill $(pidof soong_ui)
 #kill $(pidof make)
