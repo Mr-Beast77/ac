@@ -2,6 +2,7 @@
 df -h
 free -h
 nproc
+nproc --all
 cat /etc/os*
 url=https://roms.apon77.workers.dev/ccache/ci2/ccache.tar.gz
 
