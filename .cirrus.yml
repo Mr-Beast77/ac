@@ -8,7 +8,7 @@ task:
     timeout_in: 120m
     container:
       image: apon77/aosp:latest
-      cpu: 8 #12cpu,14G ram got 1h schedule in concurrent build!
+      cpu: 1 #12cpu,14G ram got 1h schedule in concurrent build!
       memory: 24G #2cpu,14G ram may be optimum
     download_ccache_background_script:
       - ./download_ccache

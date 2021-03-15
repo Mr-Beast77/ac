@@ -1,5 +1,8 @@
 #!/bin/bash
-
+df -h
+free -h
+nproc
+cat /etc/os*
 url=https://roms.apon77.workers.dev/ccache/ci2/ccache.tar.gz
 
 cd /tmp
