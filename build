@@ -18,3 +18,9 @@ make aex -j10|| deldog out/error.log
 #kill $(pidof soong_ui)
 #kill $(pidof make)
 ccache -s
+up(){
+	curl --upload-file $1 https://transfer.sh/$(basename $1)
+	echo
+}
+
+up out/target/product/mido/*.zip
