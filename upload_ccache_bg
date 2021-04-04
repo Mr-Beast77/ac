@@ -1,0 +1,71 @@
+#!/bin/bash
+starttime=`date +%s` #8:00
+sleep 30m #8:30
+
+#90min
+while [ $(( $(date +%s) - 5700 )) -lt $starttime ]; do
+
+com () 
+{ 
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
+
+mkdir -p /tmp/auto
+cp /tmp/ccache /tmp/auto/ccache -r &
+sleep 1m #8:31 9:02
+kill %1 | echo no problem
+cd /tmp/auto
+time com ccache 1
+
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy ccache.tar.gz apon:junk/ccache/auto -P &
+sleep 30m #9:01 9:32
+rm -rf ccache.tar.gz
+done
+
+#110 min
+while [ $(( $(date +%s) - 6600 )) -lt $starttime ]; do
+
+com () 
+{ 
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
+
+mkdir -p /tmp/auto
+cp /tmp/ccache /tmp/auto/ccache -r &
+sleep 1m #9:33 9:44
+kill %1 | echo no problem
+cd /tmp/auto
+time com ccache 1
+
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy ccache.tar.gz apon:junk/ccache/auto -P &
+sleep 10m #9:43 9:54
+rm -rf ccache.tar.gz
+
+done
+
+#120 min
+while [ $(( $(date +%s) - 7200 )) -lt $starttime ]; do
+
+com () 
+{ 
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
+
+mkdir -p /tmp/auto
+cp /tmp/ccache /tmp/auto/ccache -r &
+sleep 1m #9:55 9:57 9:59
+kill %1 | echo no problem
+cd /tmp/auto
+time com ccache 1
+
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy ccache.tar.gz apon:junk/ccache/auto -P &
+sleep 1m #9:56 9:58 10:00
+rm -rf ccache.tar.gz
+
+done

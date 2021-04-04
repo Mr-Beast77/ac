@@ -10,4 +10,4 @@ time com ccache 1
 
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
-time rclone copy ccache.tar.gz apon:ccache/ci2 -P
+time rclone copy ccache.tar.gz apon:junk/ccache/auto -P
