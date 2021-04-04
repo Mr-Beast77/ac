@@ -13,7 +13,8 @@ task:
     download_ccache_background_script:
       - ./download_ccache
     upload_ccache_bg_background_script:
-      - ./upload_ccache_bg
+      - echo ok
+      # - ./upload_ccache_bg
     sync_script:
       - ./sync
     monitor_background_script:

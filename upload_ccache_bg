@@ -1,6 +1,6 @@
 #!/bin/bash
 starttime=`date +%s` #8:00
-sleep 30m #8:30
+sleep 20m #8:30
 
 #90min
 while [ $(( $(date +%s) - 5700 )) -lt $starttime ]; do
@@ -20,7 +20,7 @@ time com ccache 1
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
 time rclone copy ccache.tar.gz apon:junk/ccache/auto -P &
-sleep 30m #9:01 9:32
+sleep 2m #9:01 9:32
 rm -rf ccache.tar.gz
 done
 
@@ -42,7 +42,7 @@ time com ccache 1
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf
 time rclone copy ccache.tar.gz apon:junk/ccache/auto -P &
-sleep 10m #9:43 9:54
+sleep 2m #9:43 9:54
 rm -rf ccache.tar.gz
 
 done

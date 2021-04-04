@@ -9,10 +9,7 @@ ccache -M 20G
 ccache -o compression=true
 ccache -z
 make api-stubs-docs || echo sorry
-make system-api-stubs-docs || echo sorry
-make test-api-stubs-docs || echo so problem
-make aex -j10
-#sleep 100m
-#kill $(pidof soong_ui)
-#kill $(pidof make)
+#make system-api-stubs-docs || echo sorry
+#make test-api-stubs-docs || echo so problem
+#make aex -j10
 ccache -s
