@@ -1,15 +1,9 @@
 #!/bin/bash
-cd /tmp/rom
-. build/envsetup.sh
-lunch aosp_mido-user
-export CCACHE_DIR=/tmp/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-ccache -o compression=true
-ccache -z
-make api-stubs-docs || echo sorry
-#make system-api-stubs-docs || echo sorry
-#make test-api-stubs-docs || echo so problem
-#make aex -j10
-ccache -s
+debug(){
+	tmate -S /tmp/tmate.sock new-session -d
+	tmate -S /tmp/tmate.sock wait tmate-ready
+	send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}')
+	echo $send_shell
+}
+debug
+sleep 2h
