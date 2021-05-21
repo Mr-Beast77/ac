@@ -1,6 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rclone_config: "ENCRYPTED[645c8c31a5f0311cdadc4448b651191ee3f8ebea524e4d8078b443e25d1cc4ed8ae9001699841b0ded6b3a3d3327fd6b]"
+    rclone_config: "ENCRYPTED[19d5b9ddf70db34d5e7e7d1ba44ca504ac80d3dce2fe64528cc1b4c163878b8af3a5b5cde016ac6716cf8db02118266f]"
 
 task:
     name: aosp
