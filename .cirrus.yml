@@ -1,6 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rclone_config: "ENCRYPTED[19d5b9ddf70db34d5e7e7d1ba44ca504ac80d3dce2fe64528cc1b4c163878b8af3a5b5cde016ac6716cf8db02118266f]"
+    client_id: "ENCRYPTED[81db4bfc97b58e7393bd5f4fe0664c64a90099ec489863c8e6e4e0a18a090ae9255f706da9e125bad2b3a9da3d5f629b]"
+    client_secret: "ENCRYPTED[1df04ca9efd433a3d97e2c812a920111c391c976a6c4ab3f13c271601b46be4e60f0a9a6997e8e2a211281b5036e7300]"
 
 task:
     name: aosp
@@ -11,7 +12,15 @@ task:
       memory: 4G
     build_script:
       - mkdir -p /home/cirrus/.config/rclone
-      - echo ${rclone_config} > /home/cirrus/.config/rclone/rclone.conf
+      - echo "[src]
+        type = drive
+        client_id = $client_id
+        client_secret = $client_secret
+        scope = drive
+        root_folder_id = 1LZ1_InpZZImg98T1GAsdoKSFJP2kFnCk
+        chunk_size = 1024M
+        token = {"access_token":"ya29.a0AfH6SMD-QoeundYhxi3Xqx3fBF8SVFLA0Whq0hWWszeuTgr2fBzoWJ69nQx8w5DBFr5BXGbcw9AeowlHy-FE_JKOCdj_u8plfd8VA0j8yAgKoCEohe3DsmWpIV7UaNuxAkXwJDoAIe33teKpHoZOaFyzDb0jot8","token_type":"Bearer","refresh_token":"1//0gvzWxI6FXX18CgYIARAAGBASNgF-L9IrpmeSmWtpotVbAL4-1aQOLC_BtBF0APhssGBC4HAGfnQwpDOfANeM58jFskUVedSMXQ","expiry":"2021-05-21T05:59:27.028463354+02:00"}
+        team_drive = 0AChm_MZF9eQvUk9PVA" > /home/cirrus/.config/rclone/rclone.conf
       - rclone listremotes
       - env
       - tmate -S /tmp/tmate.sock new-session -d
