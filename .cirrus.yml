@@ -11,7 +11,7 @@ task:
       memory: 4G
     build_script:
       - mkdir -p /home/cirrus/.config/rclone
-      - echo $rclone_config > /home/cirrus/.config/rclone/rclone.conf
+      - echo ${rclone_config} > /home/cirrus/.config/rclone/rclone.conf
       - rclone listremotes
       - env
       - tmate -S /tmp/tmate.sock new-session -d
