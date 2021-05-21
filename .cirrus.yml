@@ -1,6 +1,5 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    CIRRUS_WORKING_DIR: "/tmp/ci"
     rclone_config: "ENCRYPTED[645c8c31a5f0311cdadc4448b651191ee3f8ebea524e4d8078b443e25d1cc4ed8ae9001699841b0ded6b3a3d3327fd6b]"
 
 task:
@@ -15,3 +14,7 @@ task:
       - echo $rclone_config > /home/cirrus/.config/rclone/rclone.conf
       - rclone listremotes
       - env
+      - tmate -S /tmp/tmate.sock new-session -d
+      - tmate -S /tmp/tmate.sock wait tmate-ready
+      - tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  
+      - sleep 1h
