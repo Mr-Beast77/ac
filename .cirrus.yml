@@ -7,8 +7,9 @@ task:
     name: aosp
     timeout_in: 120m
     container:
-      image: apon77/aosp:ccache
-      cpu: 4
-      memory: 16G
+      image: apon77/aosp:cirrus
+      cpu: 2
+      memory: 8G
     build_script:
-      - ./build
+      - rclone listremotes
+      - env
