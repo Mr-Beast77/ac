@@ -11,5 +11,5 @@ task:
       cpu: 2
       memory: 8G
     build_script:
-      - rclone listremotes
       - env
+      - rclone listremotes
