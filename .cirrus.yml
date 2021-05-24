@@ -1,17 +1,11 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    client_id: "ENCRYPTED[81db4bfc97b58e7393bd5f4fe0664c64a90099ec489863c8e6e4e0a18a090ae9255f706da9e125bad2b3a9da3d5f629b]"
-    client_secret: "ENCRYPTED[1df04ca9efd433a3d97e2c812a920111c391c976a6c4ab3f13c271601b46be4e60f0a9a6997e8e2a211281b5036e7300]"
-
 task:
     name: aosp
     timeout_in: 120m
     container:
-      image: apon77/aosp:latest
-      cpu: 4
-      memory: 16G
+      image: apon77/aosp:cirrus
+      cpu: 1
+      memory: 4G
     build_script:
-      - tmate -S /tmp/tmate.sock new-session -d
-      - tmate -S /tmp/tmate.sock wait tmate-ready
-      - tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  
-      - sleep 2h
+      - echo 1
