@@ -7,7 +7,7 @@ task:
     name: aosp
     timeout_in: 120m
     container:
-      image: apon77/aosp:cirrus
+      image: apon77/aosp:latest
       cpu: 4
       memory: 16G
     build_script:
