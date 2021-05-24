@@ -9,3 +9,12 @@ task:
       memory: 4G
     build_script:
       - echo 1
+task:
+    name: aosp2
+    timeout_in: 120m
+    container:
+      image: apon77/aosp:cirrus
+      cpu: 1
+      memory: 4G
+    build_script:
+      - echo 2
