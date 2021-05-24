@@ -10,6 +10,7 @@ task:
       memory: 4G
     build_script:
       - sleep 2
+      - echo $TZ
 task:
     name: aosp2
     timeout_in: 120m
