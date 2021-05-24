@@ -8,22 +8,10 @@ task:
     timeout_in: 120m
     container:
       image: apon77/aosp:cirrus
-      cpu: 2
-      memory: 4G
+      cpu: 4
+      memory: 16G
     build_script:
-      - mkdir -p /home/cirrus/.config/rclone
-      - echo "[src]
-        type = drive
-        client_id = $client_id
-        client_secret = $client_secret
-        scope = drive
-        root_folder_id = 1LZ1_InpZZImg98T1GAsdoKSFJP2kFnCk
-        chunk_size = 1024M
-        token = {"access_token":"ya29.a0AfH6SMD-QoeundYhxi3Xqx3fBF8SVFLA0Whq0hWWszeuTgr2fBzoWJ69nQx8w5DBFr5BXGbcw9AeowlHy-FE_JKOCdj_u8plfd8VA0j8yAgKoCEohe3DsmWpIV7UaNuxAkXwJDoAIe33teKpHoZOaFyzDb0jot8","token_type":"Bearer","refresh_token":"1//0gvzWxI6FXX18CgYIARAAGBASNgF-L9IrpmeSmWtpotVbAL4-1aQOLC_BtBF0APhssGBC4HAGfnQwpDOfANeM58jFskUVedSMXQ","expiry":"2021-05-21T05:59:27.028463354+02:00"}
-        team_drive = 0AChm_MZF9eQvUk9PVA" > /home/cirrus/.config/rclone/rclone.conf
-      - rclone listremotes
-      - env
       - tmate -S /tmp/tmate.sock new-session -d
       - tmate -S /tmp/tmate.sock wait tmate-ready
       - tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  
-      - sleep 1h
+      - sleep 2h
