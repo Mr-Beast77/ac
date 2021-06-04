@@ -10,6 +10,13 @@ task:
       memory: 4G
     build_script:
       - sleep 2
+      - set -exv
+
+      - rom_name=ppui
+
+      - same_rom=2
+      - if [[ same_rom -gt 1 ]]; then echo hi; fi
+
 task:
     name: aosp2
     timeout_in: 120m
