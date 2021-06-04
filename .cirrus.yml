@@ -15,7 +15,7 @@ task:
       - rom_name=ppui
 
       - same_rom=2
-      - if [[ same_rom -gt 1 ]]; then echo exit 1; fi
+      - if [[ same_rom -gt 1 ]]; then exit 1; fi
 
 task:
     name: aosp2
