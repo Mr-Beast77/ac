@@ -17,6 +17,7 @@ task:
       - same_rom=2
       - if [[ same_rom -gt 1 ]]; then echo fine; echo nice; echo why; fi
 
+
 task:
     name: aosp2
     timeout_in: 120m
