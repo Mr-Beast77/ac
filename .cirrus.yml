@@ -7,11 +7,12 @@ task:
       image: apon77/aosp:cirrus
       cpu: 1
       memory: 2G
-    build_script:
-      - sleep 2
-      - sudo whoami
     always:
       test_reports_script: echo pro
+    build_script:
+      - sleep 2
+      - ls running
+      - sudo whoami
 task:
     name: aosp2
     timeout_in: 120m
