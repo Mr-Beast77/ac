@@ -6,10 +6,12 @@ task:
     container:
       image: apon77/aosp:cirrus
       cpu: 1
-      memory: 4G
+      memory: 2G
     build_script:
       - sleep 2
       - sudo whoami
+    always:
+      test_reports_script: echo pro
 task:
     name: aosp2
     timeout_in: 120m
@@ -18,6 +20,6 @@ task:
     container:
       image: apon77/aosp:cirrus
       cpu: 1
-      memory: 4G
+      memory: 2G
     build_script:
       - sleep 2
