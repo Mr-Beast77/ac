@@ -9,6 +9,7 @@ task:
       memory: 4G
     build_script:
       - sleep 2
+      - sudo whoami
 task:
     name: aosp2
     timeout_in: 120m
