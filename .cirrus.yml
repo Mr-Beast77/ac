@@ -11,8 +11,7 @@ task:
       test_reports_script: echo pro
     build_script:
       - sleep 2
-      - ls running
-      - sudo whoami
+      - ls running || echo nice
 task:
     name: aosp2
     timeout_in: 120m
