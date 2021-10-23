@@ -4,7 +4,7 @@ task:
     name: aosp
     timeout_in: 120m
     container:
-      image: apon77/aosp:latest
+      image: ubuntu:latest
       cpu: 2
       memory: 4G
     always:
@@ -18,7 +18,7 @@ task:
     depends_on:
       - aosp
     container:
-      image: apon77/aosp:latest
+      image: ubuntu:latest
       cpu: 2
       memory: 4G
     build_script:
