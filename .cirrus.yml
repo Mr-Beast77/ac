@@ -5,8 +5,8 @@ task:
     timeout_in: 120m
     container:
       image: ubuntu:latest
-      cpu: 2
-      memory: 4G
+      cpu: 4
+      memory: 16G
     always:
       test_reports_script: echo pro
     build_script:
