@@ -1,12 +1,23 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
 task:
+  name: aosp1
+  timeout_in: 120m
+  container:
+    dockerfile: Dockerfile
+    cpu: 4
+    memory: 16G
+  good_script:
+      - exit 1
+    
+    
+task:
     name: aosp
     timeout_in: 120m
     container:
       image: ubuntu:latest
-      cpu: 4
-      memory: 16G
+      cpu: 2
+      memory: 4G
     always:
       test_reports_script: echo pro
     build_script:
