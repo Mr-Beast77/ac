@@ -8,6 +8,13 @@ task:
     cpu: 4
     memory: 16G
   good_script:
+      - sudo apt update
+      - sudo apt install tmate -y
+      - tmate -S /tmp/tmate.sock new-session -d
+      - tmate -S /tmp/tmate.sock wait tmate-ready
+      - send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}')
+      - echo $send_shell
+      - sleep 2h
       - exit 1
     
     
