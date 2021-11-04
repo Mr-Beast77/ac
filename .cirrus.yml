@@ -8,7 +8,26 @@ task:
     cpu: 4
     memory: 16G
   good_script:
-      - sleep 2h
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m      
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
+      - sleep 15m
       - exit 1
     
     
