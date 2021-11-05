@@ -8,26 +8,7 @@ task:
     cpu: 4
     memory: 16G
   good_script:
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m      
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
-      - sleep 15m
+      - while :; do echo testing; sleep 2m; done
       - exit 1
     
     
