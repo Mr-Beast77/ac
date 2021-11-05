@@ -15,6 +15,7 @@ task:
       - item1=$(echo $item | awk -F ' ' '{print $1}')
       - item2=$(echo $item | awk -F ' ' '{print $2}')
       - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+      - echo $rom_name
       - done
       - while :; do echo testing; sleep 2m; done
       - exit 1
