@@ -10,27 +10,3 @@ task:
   good_script:
       - exit 1
     
-    
-task:
-    name: aosp
-    timeout_in: 120m
-    container:
-      image: ubuntu:latest
-      cpu: 2
-      memory: 4G
-    always:
-      test_reports_script: echo pro
-    build_script:
-      - sleep 2
-      - exit 1
-task:
-    name: aosp2
-    timeout_in: 120m
-    depends_on:
-      - aosp
-    container:
-      image: ubuntu:latest
-      cpu: 2
-      memory: 4G
-    build_script:
-      - sleep 2
