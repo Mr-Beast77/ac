@@ -10,4 +10,6 @@ task:
     memory: 4G
   good_script:
       - echo $bot
+      - env
+      - set
     
