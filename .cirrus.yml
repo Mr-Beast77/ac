@@ -13,6 +13,6 @@ task:
       - env
       - set
       - whoami
-      - b2="$ENCRYPTED[c88d59fc34c60d888dad06231819d494c5f260fb746eb2a32c13b5b17d1cbf99b9974b8c2adc0b2fa46d433483b8ca58]"
+      - b2="ENCRYPTED[c88d59fc34c60d888dad06231819d494c5f260fb746eb2a32c13b5b17d1cbf99b9974b8c2adc0b2fa46d433483b8ca58]"
       - echo $"ENCRYPTED[c88d59fc34c60d888dad06231819d494c5f260fb746eb2a32c13b5b17d1cbf99b9974b8c2adc0b2fa46d433483b8ca58]"
       - echo $b2
