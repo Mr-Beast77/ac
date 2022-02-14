@@ -5,8 +5,8 @@ task:
   timeout_in: 120m
   container:
     dockerfile: Dockerfile
-    cpu: 4
-    memory: 16G
+    cpu: 1
+    memory: 4G
   good_script:
       - exit 1
     
