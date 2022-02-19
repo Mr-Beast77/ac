@@ -10,6 +10,7 @@ task:
     memory: 4G
   good_script:
       - echo $bot
+      - echo 'whomai fine working thank you' > hello.tx
       - env
       - set
       - whoami
