@@ -19,6 +19,7 @@ task:
       - echo $b2
   exit_script:
       - echo hello i am exiting
-      - exit 1
+      - exit 0
+      - echo i am after exiting 0
   check_run_script:
       - echo am i running?
